@@ -1,31 +1,31 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('Creator', {
         profileUrl : {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull : false,
         },
         name: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         company: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         role: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         ifNew: {
-            type: DataTypes.Int,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         ifSubscription: {
-            type: DataTypes.Int,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         tag: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         }
     }, {

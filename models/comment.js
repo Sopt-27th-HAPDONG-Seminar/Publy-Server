@@ -1,31 +1,31 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('Comment', {
         title : {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull : false,
         },
         description: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         articleImageUrl: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         articleTitle: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         articleSource: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         saveCount: {
-            type: DataTypes.Int,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         createdTime: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull: false
         }
     }, {
