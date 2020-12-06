@@ -8,7 +8,7 @@ var logger = require('morgan');
 const { sequelize } = require('./models');
 
 /** alter: true를 해줘야 데이터베이스에 수정이 반영됨 */
-sequelize.sync({ alter: true })
+sequelize.sync({ alter: false })
 .then(() => {
  console.log('데이터베이스 연결 성공.');
 })
