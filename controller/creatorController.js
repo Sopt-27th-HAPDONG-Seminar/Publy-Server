@@ -1,13 +1,13 @@
 const util = require('../modules/util');
 const statusCode = require('../modules/statusCode');
 //const { userService } = require('../service');
-const { Alert } = require('../models');
+const { Creator } = require('../models');
 
 module.exports = {
-    // 알림 갯수 가져오기
-    alert: async (req, res) => {
+    // 새로운 코멘트 가져오기
+    readNewCreatorProfile: async (req, res) => {
         try {
-            const alerts = await Alert.findAll({
+            const alerts = await Creator.findAll({
                 attributes: ['id', 'alert'],
             });
             console.log(alerts);
