@@ -25,11 +25,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         createdTime: {
-            type: DataTypes.STRING,
+            type: DataTypes.TIME,
             allowNull: false
         }
     }, {
         freezeTableName : true,
-        timestamps : false,
+        timestamps : true,
     })
 }
