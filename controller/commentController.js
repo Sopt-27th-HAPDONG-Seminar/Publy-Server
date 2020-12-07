@@ -2,7 +2,7 @@ const util = require('../modules/util');
 const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
 
-const { commentService } = require('../service/commentService');
+const commentService = require('../service/commentService');
 const { URITooLong } = require('http-errors');
 
 module.exports = {
@@ -19,12 +19,13 @@ module.exports = {
         }
 
         try {
-            const alerts = await commentService.getComments();
-            if (!alerts) {
-                console.log('alert 테이블이 비어있습니다');
+            const comments = await commentService.getComments();
+            if (!comments) {
+                console.log('comments 테이블이 비어있습니다');
+                return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.INTERNAL_SERVER_ERROR));
             }
             
-            return res.status(statusCode.OK).send(util.success(statusCode.OK, "알림 조회 성공", alerts));
+            return res.status(statusCode.OK).send(util.success(statusCode.OK, "코멘트 조회 성공", comments));
         } catch (error) {
             console.error(error);
             return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.INTERNAL_SERVER_ERROR));  
