@@ -14,4 +14,18 @@ module.exports = {
             throw error;
         }
     },
+
+    getNewCreators: async () => {
+        try {
+            const creators = await Creator.findAll({
+                where: {
+                    ifNew: 1,
+                },
+                attributes: ['profileUrl'],
+            });
+            return creators;
+        } catch (error) {
+            throw error;
+        }
+    }
 }

@@ -1,6 +1,4 @@
-const {
-    Creator,
-} = require('../models');
+const { Creator, Alert } = require('../models');
 
 module.exports = {
     getSubscription: async () => {
@@ -14,4 +12,14 @@ module.exports = {
             throw error;
         }
     },
+    getAlert: async () => {
+        try {
+            const alert = await Alert.findAll({
+                attributes: ['alert'],
+            });
+            return alert
+        } catch (error) {
+            throw error;
+        }
+    }
 }
