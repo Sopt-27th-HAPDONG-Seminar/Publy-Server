@@ -9,14 +9,14 @@ module.exports = {
     // 알림 갯수 가져오기
     alert: async (req, res) => {
         // 요청 Body
-        const {
-            user
-        } = req.body;
+        // const {
+        //     user
+        // } = req.body;
 
-        if (!user) {
-            console.log('필요한 값이 없습니다.');
-            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
-        }
+        // if (!user) {
+        //     console.log('필요한 값이 없습니다.');
+        //     return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
+        // }
 
         try {
             const alerts = await userService.getAlert()
