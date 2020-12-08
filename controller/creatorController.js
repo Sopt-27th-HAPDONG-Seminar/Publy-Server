@@ -5,14 +5,6 @@ const creatorService = require('../service/creatorService');
 
 module.exports = {
     readAllCreators: async (req, res) => {
-        const {
-            user
-        } = req.body;
-
-        if (!user) {
-            console.log('필요한 값이 없습니다.');
-            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
-        }
         try {
             const creators = await creatorService.getAllCreators();
             if (!creators) {
@@ -27,14 +19,6 @@ module.exports = {
     },
 
     readNewCreators: async (req, res) => {
-        const {
-            user
-        } = req.body;
-
-        if (!user) {
-            console.log('필요한 값이 없습니다.');
-            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
-        }
         try {
             const creators = await creatorService.getNewCreators();
             if (!creators) {
